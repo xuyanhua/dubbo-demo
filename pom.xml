@@ -29,7 +29,7 @@
         <netty-version>4.1.12.Final</netty-version>
         <javax-servlet-api.version>3.0.1</javax-servlet-api.version>
         <sharding-jdbc-core.version>1.5.2</sharding-jdbc-core.version>
-        <dubbo.version>2.5.7</dubbo.version>
+        <dubbo.version>2.5.8</dubbo.version>
         <druid.version>1.1.5</druid.version>
         <log4j.version>1.2.17</log4j.version>
         <slf4j.version>1.7.25</slf4j.version>

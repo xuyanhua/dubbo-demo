@@ -3,6 +3,7 @@ package com.yanhua;
 import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.ReferenceConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
+import com.alibaba.dubbo.rpc.service.EchoService;
 import com.alibaba.dubbo.rpc.service.GenericService;
 import org.junit.Before;
 import org.junit.Test;
@@ -113,6 +114,19 @@ public class CallTest {
 //        person.put("password", "yyy");
 //// 如果返回POJO将自动转成Map
 //        Object result = genericService.$invoke("findPerson", new String[]{"com.xxx.Person"}, new Object[]{person});
+    }
+
+
+    /**
+     * 回声测试
+     */
+    @Test
+    public void testEcho() {
+        EchoService echoService = (EchoService) context.getBean("demoService");
+        Object status = echoService.$echo("OK");//输入什么就返回什么
+        logger.info("status---->" + status);
+        assert (status.equals("OK"));
+
     }
 
 
