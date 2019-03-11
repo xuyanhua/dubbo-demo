@@ -1,0 +1,22 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- consumer's application name, used for tracing dependency relationship (not a matching criterion),
+    don't set it same as provider -->
+    <dubbo:application name="demo-consumer" logger="log4j"/>
+
+    <!-- use multicast registry center to discover service -->
+    <!--<dubbo:registry address="multicast://224.5.6.7:1234"/>-->
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+
+    <!-- generate proxy for the remote service, then demoService can be used in the same way as the
+    local regular interface -->
+    <!--url="http://127.0.0.1:10086"-->
+    <dubbo:reference id="demoService" check="false" interface="com.yanhua.DemoService"/>
+
+    <dubbo:reference id="demoServiceGeneric" generic="true" interface="com.yanhua.DemoService"/>
+
+</beans>
