@@ -12,8 +12,6 @@
         <module>dubbo-demo-client</module>
         <module>dubbo-demo-biz</module>
         <module>dubbo-demo-consumer</module>
-        <module>dubbo-demo-client</module>
-        <module>dubbo-demo-consumer</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
